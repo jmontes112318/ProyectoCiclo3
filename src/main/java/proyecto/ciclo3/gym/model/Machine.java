@@ -32,10 +32,10 @@ public class Machine implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    private String name;
     private String brand;
     @Column(name = "years")
-    private Integer year;
-    private String name;
+    private Integer year;   
     private String description;
 
     @ManyToOne
