@@ -33,7 +33,7 @@ public class Message implements Serializable {
     @ManyToOne
     @JoinColumn(name = "machine_id")
     @JsonIgnoreProperties({ "messages", "reservations" })
-    private Machine machine;
+    private Gymmachine machine;
 
     @ManyToOne
     @JoinColumn(name = "client_id")
