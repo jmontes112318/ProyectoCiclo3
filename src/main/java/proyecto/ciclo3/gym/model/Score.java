@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -28,13 +29,7 @@ public class Score implements Serializable {
     private Integer idScore;
     private Integer score;
 
-    @ManyToOne
-    @JoinColumn(name = "message_id")
-    @JsonIgnoreProperties("score")
-    private Message message;
-
-    @ManyToOne
-    @JoinColumn(name = "reservation_id")
+    @OneToOne
     @JsonIgnoreProperties("score")
     private Reservation reservation;
 
