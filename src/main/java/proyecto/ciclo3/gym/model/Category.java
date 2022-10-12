@@ -32,6 +32,6 @@ public class Category implements Serializable {
 
     @OneToMany(cascade = { CascadeType.PERSIST }, mappedBy = "category")
     @JsonIgnoreProperties({ "category", "reservations" })
-    public List<Machine> machines;
+    public List<Gymmachine> machines;
 
 }

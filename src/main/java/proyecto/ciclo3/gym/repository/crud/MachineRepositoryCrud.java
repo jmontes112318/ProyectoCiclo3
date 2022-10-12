@@ -2,8 +2,8 @@ package proyecto.ciclo3.gym.repository.crud;
 
 import org.springframework.data.repository.CrudRepository;
 
-import proyecto.ciclo3.gym.model.Machine;
+import proyecto.ciclo3.gym.model.Gymmachine;
 
-public interface MachineRepositoryCrud extends CrudRepository<Machine, Integer> {
+public interface MachineRepositoryCrud extends CrudRepository<Gymmachine, Integer> {
 
 }

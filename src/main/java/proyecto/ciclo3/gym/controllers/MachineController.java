@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import proyecto.ciclo3.gym.model.Machine;
+import proyecto.ciclo3.gym.model.Gymmachine;
 import proyecto.ciclo3.gym.service.MachineService;
 
 @RestController
@@ -29,21 +29,21 @@ public class MachineController {
     private MachineService machineService;
 
     @GetMapping("/all")
-    public List<Machine> getAllMachines() {
+    public List<Gymmachine> getAllMachines() {
 
         return machineService.listMachines();
 
     }
 
     @GetMapping("/{id}")
-    public Optional<Machine> getMachine(@PathVariable("id") int id) {
+    public Optional<Gymmachine> getMachine(@PathVariable("id") int id) {
         return machineService.listMachine(id);
 
     }
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Machine saveMachine(@RequestBody Machine m) {
+    public Gymmachine saveMachine(@RequestBody Gymmachine m) {
         return machineService.guardarMachine(m);
 
     }
