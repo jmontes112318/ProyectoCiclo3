@@ -29,4 +29,8 @@ public class CategoryRepository {
         return categoryRepositoryCrud.save(c);
     }
 
+    public void borrarCategoria(Category c) {
+        categoryRepositoryCrud.delete(c);
+    }
+
 }
