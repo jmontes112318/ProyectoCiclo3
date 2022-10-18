@@ -48,4 +48,43 @@ public class MachineService {
 
     }
 
+    public Gymmachine ActualizarMachine(Gymmachine m) {
+
+        if (m.getId() != null) {
+
+            Optional<Gymmachine> mach = machineRepository.listarIdMachine(m.getId());
+
+            if (!mach.isEmpty()) {
+
+                if (m.getName() != null) {
+                    mach.get().setName(m.getName());
+                }
+
+                if (m.getDescription() != null) {
+                    mach.get().setDescription(m.getDescription());
+                }
+                return machineRepository.guardarMachine(mach.get());
+
+            }
+
+        }
+
+        return m;
+
+    }
+
+   
+
+    public boolean eliminarMachine(int id) {
+
+        Optional<Gymmachine> mach = listMachine(id);
+        if (!mach.isEmpty()) {
+            machineRepository.borrarCategoria(mach.get());
+            return true;
+
+        }
+        return false;
+
+    }
+
 }

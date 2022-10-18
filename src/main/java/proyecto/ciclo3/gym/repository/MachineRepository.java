@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import proyecto.ciclo3.gym.model.Gymmachine;
+
 import proyecto.ciclo3.gym.repository.crud.MachineRepositoryCrud;
 
 @Repository
@@ -27,6 +28,10 @@ public class MachineRepository {
 
     public Gymmachine guardarMachine(Gymmachine m) {
         return machineRepositoryCrud.save(m);
+    }
+
+    public void borrarCategoria(Gymmachine m) {
+        machineRepositoryCrud.delete(m);
     }
 
 }
