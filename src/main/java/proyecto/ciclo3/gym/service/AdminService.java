@@ -23,7 +23,7 @@ public class AdminService {
 
     public Optional<Admin> adminId(int id) {
 
-        return adminRepository.getIdAdmin(id);
+        return adminRepository.adminId(id);
 
     }
 
@@ -33,7 +33,7 @@ public class AdminService {
 
         } else {
 
-            Optional<Admin> adm = adminRepository.getIdAdmin(ad.getIdAdmin());
+            Optional<Admin> adm = adminRepository.adminId(ad.getIdAdmin());
             if (adm.isEmpty()) {
 
                 return adminRepository.guardarAdmin(ad);
@@ -50,14 +50,13 @@ public class AdminService {
 
         if (ad.getIdAdmin() != null) {
 
-            Optional<Admin> adm = adminRepository.getIdAdmin(ad.getIdAdmin());
+            Optional<Admin> adm = adminRepository.adminId(ad.getIdAdmin());
 
             if (!adm.isEmpty()) {
 
                 if (ad.getName() != null) {
                     adm.get().setName(ad.getName());
                 }
-
 
                 if (ad.getEmail() != null) {
                     adm.get().setEmail(ad.getEmail());
@@ -67,8 +66,6 @@ public class AdminService {
                     adm.get().setPassword(ad.getPassword());
                 }
 
-              
-               
                 return adminRepository.guardarAdmin(adm.get());
 
             }
@@ -79,8 +76,16 @@ public class AdminService {
 
     }
 
-   
+    public boolean eliminarAdmin(int id) {
 
-  
+        Optional<Admin> adm = adminId(id);
+        if (!adm.isEmpty()) {
+            adminRepository.borrarAdmin(adm.get());
+            return true;
+
+        }
+        return false;
+
+    }
 
 }

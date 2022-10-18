@@ -20,7 +20,7 @@ public class AdminRepository {
 
     }
 
-    public Optional<Admin> getIdAdmin(int id) {
+    public Optional<Admin> adminId(int id) {
 
         return admidRepositoryCrud.findById(id);
 
@@ -29,6 +29,7 @@ public class AdminRepository {
     public Admin guardarAdmin(Admin ad) {
         return admidRepositoryCrud.save(ad);
     }
+
     public void borrarAdmin(Admin ad) {
         admidRepositoryCrud.delete(ad);
     }
