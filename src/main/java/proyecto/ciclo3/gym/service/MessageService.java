@@ -48,4 +48,41 @@ public class MessageService {
 
     }
 
+    public Message ActualizarMessage(Message m) {
+
+        if (m.getIdMessage() != null) {
+
+            Optional<Message> ms = messageRepository.IdMessage(m.getIdMessage());
+
+            if (!ms.isEmpty()) {
+
+                if (m.getMessageText() != null) {
+                    ms.get().setMessageText(m.getMessageText());
+                }
+
+                
+                return messageRepository.guardarMessage(ms.get());
+
+            }
+
+        }
+
+        return m;
+
+    }
+
+  
+
+    public boolean eliminarMessage(int id) {
+
+        Optional<Message> ms = idMessage(id);
+        if (!ms.isEmpty()) {
+            messageRepository.borrarMessage(ms.get());
+            return true;
+
+        }
+        return false;
+
+    }
+
 }

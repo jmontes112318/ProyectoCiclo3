@@ -32,4 +32,8 @@ public class MessageRepository {
 
     }
 
+    public void borrarMessage(Message m) {
+        messageRepositoryCrud.delete(m);
+    }
+
 }
