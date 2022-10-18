@@ -56,7 +56,13 @@ public class ReservationRepository {
         List<Object[]> report = reservationRepositoryCrud.countTotalReservationByClient();
         for (int i = 0; i < report.size(); i++) {
 
-            res.add(new CountClient((Integer) report.get(i)[1], (Client) report.get(i)[0]));
+            Client clt = (Client) report.get(i)[0];
+            Integer cantidad = (Integer) report.get(i)[1];
+            CountClient cc = new CountClient(cantidad, clt);
+            res.add(cc);
+
+            // res.add(new CountClient((Integer) report.get(i)[1], (Client)
+            // report.get(i)[0]));
         }
 
         return res;
