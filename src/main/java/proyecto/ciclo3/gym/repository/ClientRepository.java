@@ -32,4 +32,8 @@ public class ClientRepository {
         return clientRepositoryCrud.save(cl);
     }
 
+    public void borrarCLient(Client cl) {
+        clientRepositoryCrud.delete(cl);
+    }
+
 }

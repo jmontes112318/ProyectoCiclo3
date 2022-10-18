@@ -59,6 +59,13 @@ public class MachineService {
                 if (m.getName() != null) {
                     mach.get().setName(m.getName());
                 }
+                if (m.getBrand() != null) {
+                    mach.get().setBrand(m.getBrand());
+                }
+
+                if (m.getYear() != null) {
+                    mach.get().setYear(m.getYear());
+                }
 
                 if (m.getDescription() != null) {
                     mach.get().setDescription(m.getDescription());
@@ -79,7 +86,7 @@ public class MachineService {
 
         Optional<Gymmachine> mach = listMachine(id);
         if (!mach.isEmpty()) {
-            machineRepository.borrarCategoria(mach.get());
+            machineRepository.borrarMachine(mach.get());
             return true;
 
         }

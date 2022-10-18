@@ -30,7 +30,7 @@ public class MachineRepository {
         return machineRepositoryCrud.save(m);
     }
 
-    public void borrarCategoria(Gymmachine m) {
+    public void borrarMachine(Gymmachine m) {
         machineRepositoryCrud.delete(m);
     }
 

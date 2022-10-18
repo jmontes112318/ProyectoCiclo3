@@ -18,16 +18,18 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "machine")
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
+
 
 public class Machine implements Serializable {
 
-    public Machine() {
-    }
+  
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
