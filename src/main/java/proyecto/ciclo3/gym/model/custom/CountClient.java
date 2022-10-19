@@ -9,6 +9,6 @@ import proyecto.ciclo3.gym.model.Client;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CountClient {
-    private Integer total;
+    private Long total;
     private Client client;
 }
